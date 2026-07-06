@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { Dashboard } from './features/dashboard/pages/dashboard/dashboard';
 import { MainLayout } from './layouts/main-layout/main-layout';
 import { Settings } from './features/dashboard/pages/settings/settings';
-import { Employees } from './features/dashboard/pages/employees/employees';
+import { Employees } from './features/employees/pages/employees/employees';
 
 export const routes: Routes = [
     {

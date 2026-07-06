@@ -38,17 +38,21 @@
 
     <th mat-header-cell *matHeaderCellDef>Actions</th>
 
-    <td mat-cell *matCellDef="let e">
+    <td mat-cell *matCellDef="let row">
 
-      <button mat-icon-button>
-        <mat-icon>edit</mat-icon>
-      </button>
+  <button
+    mat-icon-button
+    (click)="editEmployee.emit(row)">
+    <mat-icon>edit</mat-icon>
+  </button>
 
-      <button mat-icon-button color="warn">
-        <mat-icon>delete</mat-icon>
-      </button>
+  <button
+    mat-icon-button
+    (click)="deleteEmployee.emit(row.id)">
+    <mat-icon>delete</mat-icon>
+  </button>
 
-    </td>
+</td>
 
   </ng-container>
 

@@ -1,1 +1,94 @@
-<p>settings works!</p>
+<div class="max-w-3xl mx-auto space-y-8">
+
+  <div>
+
+    <h1 class="text-3xl font-bold">
+      Settings
+    </h1>
+
+    <p class="text-slate-500">
+      Configure your application preferences.
+    </p>
+
+  </div>
+
+  <form
+    [formGroup]="form"
+    class="flex flex-col gap-5">
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Company Name</mat-label>
+
+      <input
+        matInput
+        formControlName="companyName">
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Administrator Email</mat-label>
+
+      <input
+        matInput
+        formControlName="adminEmail">
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Timezone</mat-label>
+
+      <mat-select formControlName="timezone">
+
+        <mat-option value="America/La_Paz">
+          America/La_Paz
+        </mat-option>
+
+        <mat-option value="America/New_York">
+          America/New_York
+        </mat-option>
+
+        <mat-option value="Europe/Madrid">
+          Europe/Madrid
+        </mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <mat-label>Language</mat-label>
+
+      <mat-select formControlName="language">
+
+        <mat-option value="English">
+          English
+        </mat-option>
+
+        <mat-option value="Spanish">
+          Spanish
+        </mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+
+    <div class="flex justify-end">
+
+      <button
+        mat-flat-button
+        color="primary"
+        (click)="save()">
+
+        Save Settings
+
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

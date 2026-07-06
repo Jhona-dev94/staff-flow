@@ -25,12 +25,14 @@ export class Employees {
 
   employees = signal<Employee[]>([
     {
+      id:1,
       name: 'John Smith',
       position: 'Frontend Developer',
       department: 'IT',
       status: 'Active'
     },
     {
+      id:2,
       name: 'Sarah Johnson',
       position: 'Designer',
       department: 'Design',
@@ -40,6 +42,46 @@ export class Employees {
 
   constructor(private dialog: MatDialog) {}
 
+delete(id: number) {
+
+  const ok = confirm('Delete this employee?');
+
+  if (!ok) return;
+
+  this.employees.update(list =>
+    list.filter(employee => employee.id !== id)
+  );
+
+}
+edit(employee:Employee){
+
+const dialogRef=this.dialog.open(EmployeeDialog,{
+width:'600px',
+data:employee
+});
+
+dialogRef.afterClosed().subscribe(result=>{
+
+if(!result)return;
+
+this.employees.update(list=>
+
+list.map(x=>
+
+x.id===employee.id
+
+?{
+...result,
+id:employee.id
+}
+
+:x)
+
+);
+
+});
+
+}
   openDialog() {
 
     const dialogRef = this.dialog.open(EmployeeDialog, {
@@ -50,10 +92,13 @@ export class Employees {
 
   if (!result) return;
 
-  this.employees.update(employees => [
-    ...employees,
-    result
-  ]);
+  this.employees.update(list=>[
+...list,
+{
+...result,
+id:Date.now()
+}
+]);
 
 });
 

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild, input, effect } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, input, effect, output } from '@angular/core';
 
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
@@ -22,6 +22,8 @@ import {  Employee  } from '../../models/employee/employee';
 
 export class EmployeeTable implements AfterViewInit{
   employees = input.required<Employee[]>();
+  editEmployee=output<Employee>();
+  deleteEmployee=output<number>();
 
   displayedColumns=[
     'name',
@@ -50,6 +52,7 @@ dataSource = new MatTableDataSource<Employee>();
   filter(value:string){
 
  this.dataSource.filter=value.trim().toLowerCase();
+ 
 
 }
 }

@@ -33,6 +33,8 @@
 
 <app-employee-table
   #table
-  [employees]="employees()">
+  [employees]="employees()"
+  (editEmployee)="edit($event)"
+  (deleteEmployee)="delete($event)">
 </app-employee-table>
 </div>

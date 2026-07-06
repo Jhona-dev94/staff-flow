@@ -1,0 +1,79 @@
+<h2 mat-dialog-title>
+  Add Employee
+</h2>
+
+<mat-dialog-content>
+
+<form [formGroup]="form" class="flex flex-col gap-4 mt-4">
+
+<mat-form-field appearance="outline">
+
+<mat-label>Name</mat-label>
+
+<input
+matInput
+formControlName="name">
+
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+
+<mat-label>Position</mat-label>
+
+<input
+matInput
+formControlName="position">
+
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+
+<mat-label>Department</mat-label>
+
+<input
+matInput
+formControlName="department">
+
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+
+<mat-label>Status</mat-label>
+
+<mat-select formControlName="status">
+
+<mat-option value="Active">
+Active
+</mat-option>
+
+<mat-option value="Inactive">
+Inactive
+</mat-option>
+
+</mat-select>
+
+</mat-form-field>
+
+</form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+
+  <button
+    mat-button
+    (click)="cancel()">
+    Cancel
+  </button>
+
+  <button
+    mat-flat-button
+    color="primary"
+    [disabled]="form.invalid"
+    (click)="save()">
+
+    Save
+
+  </button>
+
+</mat-dialog-actions>

@@ -14,16 +14,25 @@
 
     </div>
 
-    <button mat-flat-button>
+    <button
+  mat-flat-button
+  color="primary"
+  (click)="openDialog()">
 
-      <mat-icon>add</mat-icon>
+  <mat-icon>add</mat-icon>
 
-      Add Employee
+  Add Employee
 
-    </button>
+</button>
 
   </div>
-  <section>
-    <app-search-bar placeholder="Search Employee"/>
-  </section>
+  <app-search-bar
+  placeholder="Search employees..."
+  (search)="table.filter($event)">
+</app-search-bar>
+
+<app-employee-table
+  #table
+  [employees]="employees()">
+</app-employee-table>
 </div>

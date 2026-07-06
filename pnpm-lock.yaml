@@ -27,7 +27,7 @@ importers:
         specifier: ^22.0.3
         version: 22.0.3(c459184280089ca7cbf84e9a14b4a6f8)
       '@angular/platform-browser':
-        specifier: ^22.0.0
+        specifier: ^22.0.5
         version: 22.0.5(@angular/common@22.0.5(@angular/core@22.0.5(@angular/compiler@22.0.5)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.0.5(@angular/compiler@22.0.5)(rxjs@7.8.2))
       '@angular/router':
         specifier: ^22.0.0
